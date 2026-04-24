@@ -1,0 +1,355 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP92FK/WjeJLs0iEIYK22qA",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/muskan320/Data_Engineering/blob/main/Data%20Engineering\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data = {\n",
+        "    \"name\" : \"Muskan\",\n",
+        "    \"age\"  : 20\n",
+        "}\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EnkkpIrKtJPz",
+        "outputId": "925cfbe7-a3d4-42d1-ec3d-f906ccbebb57"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Muskan', 'age': 20}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import json\n",
+        "\n",
+        "#serialize\n",
+        "json_data = json.dumps(data)\n",
+        "print(json_data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Zeip1NPvtJEY",
+        "outputId": "fee54fca-1787-449a-e213-63b54cbc8356"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{\"name\": \"nitish\", \"age\": 20, \"skills\": [\"python\", \"ML\"], \"address\": {\"city\": \"dehradun\"}}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#save\n",
+        "with open(\"data.json\",\"w\") as f:\n",
+        "    f.write(json_data)\n",
+        "    print(\"data stored file\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GoPbGfqFtI3S",
+        "outputId": "ddd7f080-70fb-429e-8926-a0020372e4a3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "data stored file\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "with open(\"data.json\",\"r\") as f:\n",
+        "  data=json.load(f)\n",
+        "  print(data)\n",
+        "  print(\"data loaded\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "1vbMJh0_vQKK",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "191f7d9e-3e9f-43e4-9b8c-7c673eddfac3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'nitish', 'age': 20, 'skills': ['python', 'ML'], 'address': {'city': 'dehradun'}}\n",
+            "data loaded\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "binary_data = bytes(\"json_data\",\"utf8\")\n",
+        "print(binary_data)\n",
+        "print(type(binary_data))"
+      ],
+      "metadata": {
+        "id": "bfbLFIyxv30r",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3b1a2b23-08ac-4c55-9410-3617ce5f6bd9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "b'json_data'\n",
+            "<class 'bytes'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data= {\n",
+        "    \"name\":\"sargam\",\n",
+        "    \"age\" : 20,\n",
+        "    \"city\" : \"shimla\"\n",
+        "}\n",
+        "\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "id": "wQd4TzL_0aUk",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fb23861d-594b-4cf4-a372-e59619b70789"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'sargam', 'age': 20, 'city': 'shimla'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import json\n",
+        "json_data=json.dumps(data)\n",
+        "print(json_data)\n",
+        "print(type(json_data))"
+      ],
+      "metadata": {
+        "id": "dYU-eYUc0Z-R",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c3ffd3a0-9130-4d74-d9a3-747503d589eb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{\"name\": \"sargam\", \"age\": 20, \"city\": \"shimla\"}\n",
+            "<class 'str'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import sys\n",
+        "\n",
+        "size_json=sys.getsizeof(json_data)  #byte\n",
+        "print(size_json)"
+      ],
+      "metadata": {
+        "id": "ctQ2_3iJ15P0",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8e0dc985-83e0-4682-f6ad-659a5cd2a53b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "88\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#memory size\n",
+        "size_binary =sys.getsizeof(binary_data)\n",
+        "print(size_binary)"
+      ],
+      "metadata": {
+        "id": "F9uyrTsTzf3l",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5946a0d1-e9dc-4272-f6d1-671aa6e6a61b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "42\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data = {\n",
+        "    \"name\": \"nitish\",\n",
+        "    \"age\" : 20,\n",
+        "    \"skills\" : [\"python\",\"ML\"],\n",
+        "    \"address\" : {\n",
+        "        \"city\": \"dehradun\"\n",
+        "    }\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "ux6pBJ5_zjM7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd"
+      ],
+      "metadata": {
+        "id": "8sIj_OtuzfoW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data_np =np.array([\n",
+        "    [\"sargam\",20],\n",
+        "    [\"aniket\",20],\n",
+        "    [\"muskan\",21]\n",
+        "])\n",
+        "print(data_np)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BZDt1Mt68jBU",
+        "outputId": "2026e69c-cdf6-44b7-e501-63932cf36dc2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[['sargam' '20']\n",
+            " ['aniket' '20']\n",
+            " ['muskan' '21']]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#access element\n",
+        "print(data_np[:,1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IWjhUwmO9wWD",
+        "outputId": "b68843d2-795b-48b0-ffc6-d8814a04b73b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['20' '20' '21']\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
